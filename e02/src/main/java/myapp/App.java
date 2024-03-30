@@ -6,6 +6,29 @@ public class App {
     }
 
     public static void main(final String[] args) {
+        Cat cat = new Cat();
 
+        cat.makeSound();
+
+        Dog dog = new Dog();
+        dog.makeSound();
+    }
+}
+
+abstract class Animal {
+    abstract String makeSound();
+}
+
+class Cat extends Animal {
+    @Override
+    String makeSound() {
+        return "Meow";
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    String makeSound() {
+        return "Woof";
     }
 }

@@ -1,5 +1,5 @@
 package exercise;
-import javax.swing.JOptionPane;
+
 
 public class App {
     private App() {
@@ -7,7 +7,7 @@ public class App {
     }
 
     public static void main(final String[] args) {
-        Traingle t = new Traingle(2,3);
+        Triangle t = new Triangle(2,3);
         Circle c = new Circle(3);
 
         c.calculateArea();
@@ -16,10 +16,11 @@ public class App {
 }
 
 abstract class Shape {
-    calculateArea();
+    abstract double calculateArea();
 }
 
-class Traingle extends Shape {
+
+class Triangle extends Shape {
     double base;
     double height;
 
@@ -27,19 +28,21 @@ class Traingle extends Shape {
         this.base = b;
         this.height = h;
     }
-    calculateArea() {
-        System.out.println("Area: " + 0.5 * this.base * this.height);
+    double calculateArea() {
+        return 0.5 * this.base * this.height;
     }
 }
 
 class Circle extends Shape {
     double radius;
 
-    Radius(double r) {
+    Circle(double r) {
         this.radius = r;
     }
 
-    calculateArea() {
-        System.out.println("Area: " + Math.PI * this.radius * this.radius);
+    double calculateArea() {
+        return Math.PI * this.radius * this.radius;
     }
 }
+
+
